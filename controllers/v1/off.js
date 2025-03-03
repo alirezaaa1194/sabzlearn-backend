@@ -38,11 +38,7 @@ exports.getAll = async (req, res, next) => {
     allOffs.forEach((off) => {
       offs.push({
         ...off,
-<<<<<<< HEAD
-        creator: off.creator.name,
-=======
         creator: off.creator?.name,
->>>>>>> e1913f0 (initial files)
       });
     });
 

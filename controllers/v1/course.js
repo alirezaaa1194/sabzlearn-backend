@@ -54,11 +54,7 @@ exports.update = async (req, res, next) => {
   try {
     const updatedCategory = await categoryModel.findOneAndUpdate(
       { _id: req.params.id },
-<<<<<<< HEAD
-      { name: req.body.name, title: req.body.title },
-=======
       { name: req.body?.name, title: req.body.title },
->>>>>>> e1913f0 (initial files)
       { new: true }
     );
     if (!updatedCategory) {
@@ -172,11 +168,7 @@ exports.getAll = async (req, res, next) => {
       allCourses.push({
         ...course,
         categoryID: course.categoryID,
-<<<<<<< HEAD
-        creator: course.creator.name,
-=======
         creator: course.creator?.name,
->>>>>>> e1913f0 (initial files)
         registers: courseRegisters.length,
         courseAverageScore: Math.floor(
           courseTotalScore / (courseScores.length + 1)
@@ -240,11 +232,7 @@ exports.getOne = async (req, res, next) => {
       if (!comment.mainCommendID) {
         allComments.push({
           ...comment,
-<<<<<<< HEAD
-          course: comment.course.name,
-=======
           course: comment.course?.name,
->>>>>>> e1913f0 (initial files)
           answerContent: mainCommentAnswerInfo,
         });
       }
@@ -378,11 +366,7 @@ exports.getCategoryCourses = async (req, res, next) => {
         allCourses.push({
           ...course,
           categoryID: course.categoryID.title,
-<<<<<<< HEAD
-          creator: course.creator.name,
-=======
           creator: course.creator?.name,
->>>>>>> e1913f0 (initial files)
           registers: courseRegisters.length,
           courseAverageScore: Math.floor(
             courseTotalScore / (courseScores.length + 1)

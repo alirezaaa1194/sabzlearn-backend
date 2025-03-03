@@ -53,11 +53,7 @@ exports.update = async (req, res, next) => {
     });
     const updatedCategory = await categoryModel.findOneAndUpdate(
       { _id: req.params.id },
-<<<<<<< HEAD
-      { name: req.body.name, title: req.body.title },
-=======
       { name: req.body?.name, title: req.body.title },
->>>>>>> e1913f0 (initial files)
       { new: true }
     );
     if (!updatedCategory) {

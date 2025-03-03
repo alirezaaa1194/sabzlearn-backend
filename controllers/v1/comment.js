@@ -54,11 +54,7 @@ exports.getAll = async (req, res, next) => {
       if (!comment.mainCommendID) {
         comments.push({
           ...comment,
-<<<<<<< HEAD
-          course: comment.course.name,
-=======
           course: comment.course?.name,
->>>>>>> e1913f0 (initial files)
           answerContent: mainCommentAnswerInfo,
         });
       }

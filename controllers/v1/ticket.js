@@ -55,15 +55,9 @@ exports.userTickets = async (req, res, next) => {
       if (ticket.isAnswer === 0) {
         ticketsArray.push({
           ...ticket,
-<<<<<<< HEAD
-          departmentID: ticket.departmentID.title,
-          departmentSubID: ticket.departmentSubID.title,
-          user: ticket.user.name,
-=======
           departmentID: ticket.departmentID,
           departmentSubID: ticket.departmentSubID,
           user: ticket.user?.name,
->>>>>>> e1913f0 (initial files)
         });
       }
     });
@@ -93,17 +87,10 @@ exports.getAll = async (req, res, next) => {
       if (ticket.isAnswer === 0) {
         ticketsArray.push({
           ...ticket,
-<<<<<<< HEAD
-          departmentID: ticket.departmentID.title,
-          departmentSubID: ticket.departmentSubID.title,
-          user: ticket.user.name,
-          course: ticket.course ? ticket.course.name : null,
-=======
           departmentID: ticket.departmentID,
           departmentSubID: ticket.departmentSubID,
           user: ticket.user?.name,
           course: ticket.course ? ticket.course?.name : null,
->>>>>>> e1913f0 (initial files)
         });
       }
     });
