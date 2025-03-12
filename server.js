@@ -1,41 +1,6 @@
-// const dotenv = require("dotenv");
-// const { default: mongoose } = require("mongoose");
-// const app = require("./app");
-
-// //* Load env
-// dotenv.config();
-
-// //* Database connection
-// (async () => {
-//   try {
-//     // const conn = await mongoose.connect(process.env.MONGO_URI,{
-//     //   authSource:'admin',
-//     //   useNewUrlParser:true,
-//     //   useUnifiedTopology:true
-//     // });
-//     const conn = await mongoose.connect(process.env.MONGO_URI);
-//     console.log(`MongoDB Connected: ${conn.connection.host}`);
-//   } catch (err) {
-//     //?error catch
-//     console.log(err);
-//     process.exit(1);
-//   }
-// })();
-
-// // const port = +process.env.PORT || 3000;
-// const port = 4000;
-
-// const productionMode = process.env.NODE_ENV === "production";
-// app.listen(port, () => {
-//   console.log(`Server running in ${productionMode ? "production" : "development"} mode on port ${port}`);
-// });
-
-////////////////////////////////////////////////////
-
-
 const dotenv = require("dotenv");
-const mongoose = require("mongoose");
-const app = require("./app.js");
+const { default: mongoose } = require("mongoose");
+const app = require("./app");
 
 //* Load env
 dotenv.config();
@@ -43,21 +8,24 @@ dotenv.config();
 //* Database connection
 (async () => {
   try {
+    // const conn = await mongoose.connect(process.env.MONGO_URI,{
+    //   authSource:'admin',
+    //   useNewUrlParser:true,
+    //   useUnifiedTopology:true
+    // });
     const conn = await mongoose.connect(process.env.MONGO_URI);
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (err) {
-    console.log("MongoDB Connection Error:", err);
+    //?error catch
+    console.log(err);
     process.exit(1);
   }
 })();
 
-const port = process.env.PORT || 3000;
-const productionMode = process.env.NODE_ENV === "production";
+// const port = +process.env.PORT || 3000;
+const port = 4000;
 
+const productionMode = process.env.NODE_ENV === "production";
 app.listen(port, () => {
   console.log(`Server running in ${productionMode ? "production" : "development"} mode on port ${port}`);
 });
-
-
-
-
